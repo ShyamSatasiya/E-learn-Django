@@ -1,0 +1,150 @@
+{#{% extends 'base.html' %}#}
+{#{% block title %} Membership checkout{% endblock %}#}
+{#{% block content %}#}
+{#    <!-- PAGE TITLE#}
+{#    ================================================== -->#}
+{#    <header class="py-8 py-md-10" style="background-image: none;">#}
+{#        <div class="container text-center py-xl-2">#}
+{#            <h1 class="display-4 fw-semi-bold mb-0">Gold Membership Checkout</h1>#}
+{#            <nav aria-label="breadcrumb">#}
+{#                <ol class="breadcrumb breadcrumb-scroll justify-content-center">#}
+{#                    <li class="breadcrumb-item">#}
+{#                        <a class="text-gray-800" href="">#}
+{#                            Home#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="breadcrumb-item text-gray-800 active" aria-current="page">#}
+{#                        Membership Checkout#}
+{#                    </li>#}
+{#                </ol>#}
+{#            </nav>#}
+{#        </div>#}
+{#        <!-- Img -->#}
+{#        <img class="d-none img-fluid" src="...html" alt="...">#}
+{#    </header>#}
+{##}
+{##}
+{#    <!-- SHOP CHECKOUT#}
+{#    ================================================== -->#}
+{#    <div class="container pb-6 pb-xl-10">#}
+{#        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{% url 'gold_member_register' %}" >#}
+{#            {% csrf_token %}#}
+{#            <div class="col2-set" id="customer_details">#}
+{#                <div class="col-1">#}
+{#                    <div class="woocommerce-billing-fields">#}
+{#                        <h3>Billing details</h3>#}
+{#                        <div class="woocommerce-billing-fields__field-wrapper">#}
+{#                            <p class="form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field" data-priority="10">#}
+{#                                <label for="billing_firstname" class="">First name <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="text" class="input-text " name="billing_first_name" id="billing_firstname" placeholder="" value="{{ first_name }}" autocomplete="given-name" autofocus="autofocus" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">#}
+{#                                <label for="billing_lastname" class="">Last name <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="text" class="input-text " name="billing_last_name" id="billing_lastname" placeholder="" value="{{ last_name }}" autocomplete="family-name" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-last validate-required" id="billing_username_field" data-priority="20">#}
+{#                                <label for="billing_username_field" class="">user name <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="text" class="input-text " name="billing_user_name" id="billing_username" placeholder="" value="{{ user_name }}" autocomplete="family-name" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-last validate-required" id="" data-priority="20">#}
+{#                                <label for="billing_username_field" class="">email <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="email" class="input-text " name="billing_user_email" id="billing_email" placeholder="" value="{{ user_email }}" autocomplete="family-name" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-last validate-required" id="billing_password_field" data-priority="20">#}
+{#                                <label for="billing_username_field" class="">password <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="password" class="input-text " name="billing_user_password" id="billing_password" placeholder="" value="{{ user_password }}" autocomplete="family-name" required>#}
+{#                            </p>#}
+{#                            <h3>Card details</h3>#}
+{##}
+{#                            <p class="form-row form-row-last validate-required" id="billing_card_field" data-priority="110">#}
+{#                                <label for="cc_num" class="">Card number<abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="number" class="input-text" name="Card_number" id="Card_number" placeholder="16 digit debit card number" value="" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-wide address-field validate-required" id="CVV_field" data-priority="90" data-o_class="form-row form-row-wide address-field validate-required validate-postcode">#}
+{#                                <label for="CVV_field" class="">CVV <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="number" class="input-text " name="CVVV" id="CVVV" placeholder="" value="" required>#}
+{#                            </p>#}
+{#                            <p class="form-row form-row-first validate-required" id="expiry_month_field" data-priority="100">#}
+{#                                <label for="expiry_month" class="">Expiry Month <abbr class="required" title="required">*</abbr></label>#}
+{#                                <input type="text" class="input-text " name="expiry_month" id="expiry_month" placeholder="MM/YY" value="" required>#}
+{#                            </p>#}
+{#                        </div>#}
+{##}
+{##}
+{#                    </div>#}
+{##}
+{##}
+{#                </div>#}
+{##}
+{#            </div>#}
+{##}
+{#            <div id="order_review" class="woocommerce-checkout-review-order">#}
+{#                <div class="woocommerce-checkout-review-order-inner">#}
+{#                    <h3 id="order_review_heading">Your order</h3>#}
+{#                    <table class="shop_table woocommerce-checkout-review-order-table">#}
+{#                        <thead>#}
+{#                            <tr>#}
+{#                                <th class="product-name">Product</th>#}
+{#                                <th class="product-total">Total</th>#}
+{#                            </tr>#}
+{#                        </thead>#}
+{#                        <tbody>#}
+{##}
+{#                            <tr class="cart_item">#}
+{#                                <td class="product-name">#}
+{#                                    Gold Membership#}
+{#                                    <strong class="product-quantity">× 1</strong>#}
+{#                                </td>#}
+{#                                <td class="product-total">#}
+{#                                    <span class="woocommerce-Price-amount amount">#}
+{#                                        <span class="woocommerce-Price-currencySymbol">$</span>#}
+{#                                        199#}
+{#                                    </span>#}
+{#                                </td>#}
+{#                            </tr>#}
+{#                        </tbody>#}
+{#                        <tfoot>#}
+{##}
+{##}
+{#                            <tr class="order-total">#}
+{#                                <th>Total</th>#}
+{#                                <td><strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>199</span></strong> </td>#}
+{#                            </tr>#}
+{#                        </tfoot>#}
+{#                    </table>#}
+{#                </div>#}
+{##}
+{#                <div id="payment" class="woocommerce-checkout-payment">#}
+{##}
+{#                    <div class="form-row place-order">#}
+{#                        <input class="btn btn-primary btn-block" type="submit" value="Join Nex Learn" />#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </form>#}
+{#    </div>#}
+{##}
+{#    <!-- CALL ACTION#}
+{#    ================================================== -->#}
+{#    <section class="py-6 py-md-11 border-top border-bottom" data-jarallax data-speed=".8" style="background-image: url(assets/img/illustrations/illustration-1.jpg)">#}
+{#        <div class="container text-center py-xl-4" data-aos="fade-up">#}
+{#            <div class="row">#}
+{#                <div class="col-xl-7 mx-auto">#}
+{#                    <h1 class="text-capitalize">Subscribe our newsletter</h1>#}
+{#                    <p class="text-capitalize font-size-lg mb-md-6 mb-4">Your download should start automatically, if not Click here. Should I give up, huh?.</p>#}
+{#                    <div class="mx-md-8">#}
+{#                        <form>#}
+{#                            <div class="input-group">#}
+{#                                <input type="text" class="form-control" placeholder="enter your email" aria-label="Enter your email" aria-describedby="button-addon2">#}
+{#                                <div class="input-group-append">#}
+{#                                    <button class="btn btn-primary btn-sm-wide" type="button" id="button-addon2">Subscribe</button>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#{% endblock %}#}
